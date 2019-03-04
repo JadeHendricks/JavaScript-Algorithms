@@ -178,7 +178,7 @@ console.log(totalYearsES6);
 const combinedAges = ages
       .map(age => age * 2)
       .filter(age => age >= 40)
-      .sort((a,b) => a - b)
+      .sort((a, b) => a - b)
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
 console.log(combinedAges);
