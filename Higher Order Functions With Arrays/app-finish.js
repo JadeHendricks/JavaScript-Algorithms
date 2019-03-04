@@ -141,3 +141,34 @@ console.log(sortedAges);
 console.log(sortedAgesES6);
 
 
+// Using the reduce method, add all the ages together
+// forloop
+let ageSum = 0;
+
+for (let i = 0; i < ages.length; i++) {
+  ageSum += ages[i];
+}
+
+console.log(ageSum);
+
+// reduce
+const reduceSum = ages.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+//ES6
+const reduceSumES6 = ages.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(reduceSumES6);
+
+
+// Using the reduce method, get the total years for all companies
+const totalYears = companies.reduce( function (accumulator, currentValue) {
+  return accumulator + (currentValue.end - currentValue.start);
+}, 0);
+
+//ES6
+const totalYearsES6 = companies.reduce((accumulator, currentValue) => accumulator + (currentValue.end - currentValue.start), 0);
+
+console.log(totalYears);
+console.log(totalYearsES6);
