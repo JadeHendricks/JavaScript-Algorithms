@@ -13,7 +13,7 @@ const companies= [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 // forEach - easier way to write a for loop, it doesn't return anything back to you (current, index, array)
-// filter - Allows us to filter things out of the array
+// filter - Allows us to filter things out of the array (current, index, array)
 // map
 // sort
 // reduce
@@ -45,3 +45,45 @@ console.log(canDrink);
 
 
 // Use the filter method and get all the ages out of the ages array that are 21 and over
+//ES5
+const canDrinkFilter = ages.filter(function(age) {
+  if (age >= 21) {
+    return true;
+  }
+});
+
+//ES6
+const canDrinkFilterES6 = ages.filter( age => age >= 21);
+
+
+// Use the filter to filter out all the retial companies from the companies array
+const retailCompanies = companies.filter(function (company) {
+  if (company.category === 'Retail') {
+    return true;
+  }
+});
+
+//ES6
+const retailCompaniesES6 = companies.filter( company => company.category === 'Retail');
+
+console.log(retailCompanies);
+console.log(retailCompaniesES6);
+
+
+// Use the filter to filter out all companies that have started in the 80s
+const companies80s = companies.filter(function(company){
+  if (company.start > 1979 && company.start < 1990) {
+    return true;
+  }
+});
+
+console.log(companies80s);
+
+// filter out companies that have lasted 10 years or more
+const companies10Years = companies.filter(function(company){
+  if ((company.end - company.start) >= 10) {
+    return true;
+  }
+});
+
+console.log(companies10Years);
