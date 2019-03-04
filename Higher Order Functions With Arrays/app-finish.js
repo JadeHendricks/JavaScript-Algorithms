@@ -11,3 +11,37 @@ const companies= [
 ];
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+// forEach - easier way to write a for loop, it doesn't return anything back to you (current, index, array)
+// filter - Allows us to filter things out of the array
+// map
+// sort
+// reduce
+
+
+//START
+// loop through companies with a for loop
+for (let i = 0; i < companies.length; i++) {
+  console.log(companies[i]);
+}
+
+// loop through companies with a forEach loop
+companies.forEach(function (company) {
+  console.log(company);
+  console.log(company.name);
+});
+
+
+// Use the for loop and get all the ages out of the ages array that are 21 and over
+let canDrink = [];
+
+for (let i = 0; i < ages.length; i++) {
+  if (ages[i] >= 21) {
+    canDrink.push(ages[i]);
+  }
+}
+
+console.log(canDrink);
+
+
+// Use the filter method and get all the ages out of the ages array that are 21 and over
