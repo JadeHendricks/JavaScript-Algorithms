@@ -14,9 +14,9 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 // forEach - easier way to write a for loop, it doesn't return anything back to you (current, index, array)
 // filter - Allows us to filter things out of the array (current, index, array)
-// map
-// sort
-// reduce
+// map - We can created new arrays from the current array, based on anything (current, index, array)
+// sort - Sort an array in a certain order of choice - takes 2 values and compares them
+// reduce - Reduces alot of items into 1 value
 
 
 //START
@@ -87,3 +87,57 @@ const companies10Years = companies.filter(function(company){
 });
 
 console.log(companies10Years);
+
+
+// Use map to take out all of the company names and add them into their own array
+const companyNames = companies.map(function(company){
+  return company.name;
+});
+
+console.log(companyNames);
+
+// Use map to take out all of the company names and add them into their own array with there start and end dates
+const companyNamesandDates = companies.map(function(company){
+  return `${company.name} [${company.start} - ${company.end}]`;
+});
+
+console.log(companyNamesandDates);
+
+// Use map to times 2 all ages in the ages array
+const agesTimes2 = ages.map(function(age) {
+  return age * 2;
+});
+
+console.log(agesTimes2);
+
+
+// Using the sort method, sort all the companies by their start date
+const sortedComapnies = companies.sort(function(a, b) {
+  if (a.start > b.start) {
+    return 1;
+  }
+  return -1;
+});
+
+//ES6
+const sortedComapniesES6 = companies.sort((a , b) => (a.start > b.start ? 1: -1));
+
+console.log(sortedComapnies);
+console.log(sortedComapniesES6);
+
+
+// Using the sort method, sort all the ages in the ages array
+const sortedAges = ages.sort(function(a, b) {
+  if (a > b) {
+    return 1;
+  }
+  return -1;
+});
+
+//ES6
+const sortedAgesES6 = ages.sort( (a, b) => a - b);
+
+console.log(sortedAges);
+console.log(sortedAgesES6);
+
+
